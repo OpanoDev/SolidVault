@@ -1,10 +1,10 @@
 {
-    "name": "Padloc",
+    "name": "SolidVault",
     "background_color": "#ffffff",
-    "description": "A modern password manager for indviduals and teams",
-    "appId": "app.padloc",
-    "scheme": "padloc",
-    "author": "Martin Kleinschrodt <martin@maklesoft.com>",
+    "description": "A modern blockchain based password manager for indviduals and teams",
+    "appId": "app.solidvault",
+    "scheme": "solidvault",
+    "author": "Yasin Karaman <karaman@opano.de>",
     "icon_background": "#f1f1f1",
-    "terms_of_service": "https://padloc.app/tos"
+    "terms_of_service": "https://www.solidqore.com/privacy-policy/"
 }

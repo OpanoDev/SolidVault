@@ -1,4 +1,4 @@
-<a href="#">
+<a href="https://www.solidqore.com/faqs/">
     <button class="fill-horizontally">
         <div class="horizontal spacing layout">
             <i class="fa-user block"></i>
@@ -8,17 +8,17 @@
     </button>
 </a>
 
-<a href="#">
+<a href="https://www.solidqore.com/terms-and-conditions/">
     <button class="fill-horizontally">
         <div class="horizontal spacing layout">
             <i class="fa-lock lock block"></i>
-            <div class="stretch">Support Ticket</div>
+            <div class="stretch">Terms and Conditions</div>
             <i class="subtle block fa-external-link"></i>
         </div>
     </button>
 </a>
 
-<a href="#">
+<!-- <a href="#">
     <button class="fill-horizontally">
         <div class="horizontal spacing layout">
             <i class="fa-comments-alt block"></i>
@@ -36,4 +36,4 @@
             <i class="subtle block fa-external-link"></i>
         </div>
     </button>
-</a>
+</a> -->

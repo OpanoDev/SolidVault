@@ -238,7 +238,7 @@ export class Menu extends Routing(StateMixin(LitElement)) {
             <div class="padded">
                 <pl-logo reveal></pl-logo>
 
-                <div class="subtle tiny text-centering">v${process.env.PL_VENDOR_VERSION}</div>
+                <div class="subtle tiny text-centering">v1.2.0</div>
 
                 <div class="spacer"></div>
             </div>
@@ -355,9 +355,7 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                                         @click=${(e: Event) => this._goTo(`orgs/${org.id}`, undefined, e)}
                                         ?hidden=${!isAdmin}
                                     >
-                                        <pl-icon icon="settings"></pl-icon>
                                     </pl-button>
-                                    <pl-icon icon="chevron-down" class="small subtle dropdown-icon"></pl-icon>
                                 </div>
 
                                 <pl-drawer .collapsed=${!this._expanded.has(`org_${org.id}_vaults`)}>
