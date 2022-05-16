@@ -122,8 +122,8 @@ export class Settings extends StateMixin(Routing(View)) {
                                     aria-selected=${this._page === "tools"}
                                     @click=${() => this.go("settings/tools")}
                                 >
-                                    <pl-icon icon="tools"></pl-icon>
-                                    <div class="stretch ellipsis">${$l("Tools")}</div>
+                                    <pl-icon icon="vault"></pl-icon>
+                                    <div class="stretch ellipsis">${$l("Data")}</div>
                                 </div>
                                 <div
                                     role="link"

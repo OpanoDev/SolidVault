@@ -179,10 +179,10 @@ export class Unlock extends StartForm {
                 </form>
 
                 <div class="stretch"></div>
-
+                <!--
                 <pl-button class="bioauth-button transparent" id="bioauthButton" @click=${this._bioAuth}>
-                    <pl-icon icon="fingerprint"></pl-icon>
-                </pl-button>
+                    <pl-icon icon="fingerprint"></pl-icon> </pl-button
+                > -->
             </div>
         `;
     }

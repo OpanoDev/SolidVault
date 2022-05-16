@@ -630,13 +630,12 @@ export class LoginOrSignup extends StartForm {
                             <div class="spacer"></div>
 
                             <div class="hint">
-                                Hi there, <strong>${this._nameInput?.value || "Stranger"}</strong>! Let's set up your
-                                brand new ${process.env.PL_APP_NAME} account! (This will only take a few moments.)
+                                Hi there! Let's set up your brand new ${process.env.PL_APP_NAME} account!
                             </div>
 
                             <pl-input
                                 id="nameInput"
-                                .label=${$l("Your Name (Optional)")}
+                                .label=${$l("Full Name")}
                                 .value=${this._name}
                                 @enter=${() => this._tosCheckbox?.focus()}
                                 ?disabled=${this._page !== "signup" || this._step !== "consent"}
@@ -654,7 +653,9 @@ export class LoginOrSignup extends StartForm {
                                 <label>
                                     <input type="checkbox" id="tosCheckbox" @input=${() => this.requestUpdate()} />
                                     I have read and agree to the
-                                    <a href="${process.env.PL_TERMS_OF_SERVICE || "#"}">Terms of Service</a>
+                                    <a target="_blank" href="${process.env.PL_TERMS_OF_SERVICE || "#"}"
+                                        >Terms of Service</a
+                                    >
                                 </label>
                             </div>
 
@@ -732,7 +733,7 @@ export class LoginOrSignup extends StartForm {
                                 </div>
 
                                 <div class="master-password-cover">
-                                    ${isTouch() ? $l("[Tap To Reveal]") : $l("[Hover To Reveal]")}
+                                    ${isTouch() ? $l("{Tap Here}") : $l("{Hover Here}")}
                                 </div>
                             </div>
                         </pl-drawer>
@@ -744,8 +745,7 @@ export class LoginOrSignup extends StartForm {
                             <div class="horizontally-margined hint">
                                 <div>
                                     ${$l(
-                                        "This random passphrase was generated just for you and is designed " +
-                                            "to be both secure and easy to remember."
+                                        "This random passphrase was generated automatically to be both secure and easy to remember."
                                     )}
                                 </div>
                             </div>
@@ -794,12 +794,11 @@ export class LoginOrSignup extends StartForm {
                             >
                             </pl-password-input>
 
-                            <div class="hint margined padded">
+                            <div class="hint margined text-centering padded">
                                 ${$l(
                                     "Your master password is the last password you'll ever have to remember! " +
-                                        "Please memorize it and never reveal it to anyone - not even us! " +
-                                        "We recommend writing it down on a piece of paper and " +
-                                        "storing it somewhere safe, at least until you have it safely memorized."
+                                        "Please memorize it and never reveal it to anyone <strong>not even us!</strong> " +
+                                        "We recommend storing it somewhere safe."
                                 )}
                             </div>
 
@@ -821,14 +820,9 @@ export class LoginOrSignup extends StartForm {
 
                         <pl-drawer class="springy" .collapsed=${this._page !== "signup" || this._step !== "success"}>
                             <div class="huge spacer"></div>
-                            <div class="big highlighted text-centering">
-                                ${$l("All set!")} <pl-icon icon="celebrate" class="inline"></pl-icon>
-                            </div>
+                            <div class="big highlighted text-centering">${$l("All set!")}</div>
                             <div class="padded bottom-margined text-centering">
-                                ${$l(
-                                    "Your account was created successfully. Enjoy using {0}!",
-                                    process.env.PL_APP_NAME!
-                                )}
+                                ${$l("Your account was created successfully!!")}
                             </div>
                             <pl-button class="primary" @click=${() => this._done()}>
                                 <div>${$l("Get Started")}</div>

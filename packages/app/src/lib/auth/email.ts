@@ -13,17 +13,14 @@ export class EmailAuthClient implements AuthClient {
 
     private _updateDialogInterval?: number;
 
-    async _promptCode({ email, sentAt, subject }: { email: string; sentAt: string; subject: string }) {
+    async _promptCode({ email, sentAt }: { email: string; sentAt: string }) {
         const promptDialog = (await getDialog("pl-prompt-dialog")) as PromptDialog;
 
         const sent = new Date(sentAt);
         const message = async () => {
             const sentString = await formatDateFromNow(sent);
             return html` <div>${$l(`Please enter the six digit verification code sent to {0}!`, email)}</div>
-                <div class="tiny subtle top-margined">
-                    <span class="semibold">Sent:</span> ${sentString}<br />
-                    <span class="semibold">Subject:</span> ${subject}
-                </div>`;
+                <div class="tiny subtle top-margined"><span class="semibold">Sent:</span> ${sentString}<br /></div>`;
         };
 
         window.clearInterval(this._updateDialogInterval);
@@ -49,11 +46,11 @@ export class EmailAuthClient implements AuthClient {
         return code ? { code } : null;
     }
 
-    async prepareRegistration(params: { email: string; sentAt: string; subject: string }) {
+    async prepareRegistration(params: { email: string; sentAt: string }) {
         return this._promptCode(params);
     }
 
-    async prepareAuthentication(params: { email: string; sentAt: string; subject: string }) {
+    async prepareAuthentication(params: { email: string; sentAt: string }) {
         return this._promptCode(params);
     }
 }

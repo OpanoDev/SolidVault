@@ -191,13 +191,12 @@ export class App extends ServiceWorker(StateMixin(AutoSync(ErrorHandling(AutoLoc
                 top: var(--inset-top);
             }
 
-            .wrapper:not(.active),
+            */.wrapper:not(.active),
             :host(.dialog-open) .wrapper {
                 transform: translate3d(0, 0, -150px) rotateX(5deg);
                 border-radius: 1em;
             }
-
-            :host(.dialog-open.hide-app) {
+            */ :host(.dialog-open.hide-app) {
                 background: transparent;
             }
 
@@ -274,17 +273,17 @@ export class App extends ServiceWorker(StateMixin(AutoSync(ErrorHandling(AutoLoc
 
             @media (min-width: 1200px) {
                 .wrapper {
-                    border-radius: 1em;
+                    /*border-radius: 1em;*/
                     overflow: hidden;
                     box-shadow: var(--app-wrapper-shadow);
                     margin: auto;
                     overflow: hidden;
-                    top: 2em;
+                    /*top: 2em;
                     left: 2em;
                     right: 2em;
-                    bottom: 2em;
-                    max-width: 1200px;
-                    max-height: 900px;
+                    bottom: 2em;*/
+                    /*max-width: 1200px;
+                    max-height: 900px;*/
                 }
 
                 .wrapper:not(.active),

@@ -44,8 +44,8 @@ export class SettingsTools extends StateMixin(LitElement) {
                     <pl-button class="transparent slim back-button" @click=${() => router.go("settings")}>
                         <pl-icon icon="backward"></pl-icon>
                     </pl-button>
-                    <pl-icon icon="tools" class="left-margined vertically-padded wide-only"></pl-icon>
-                    <div class="padded stretch ellipsis">${$l("Tools")}</div>
+                    <pl-icon icon="vault" class="left-margined vertically-padded wide-only"></pl-icon>
+                    <div class="padded stretch ellipsis">${$l("Data")}</div>
                 </header>
 
                 <pl-scroller class="stretch">
