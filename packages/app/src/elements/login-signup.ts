@@ -21,8 +21,8 @@ import { AccountProvisioning, ProvisioningStatus } from "@padloc/core/src/provis
 import "./rich-content";
 import { displayProvisioning } from "../lib/provisioning";
 import { StartAuthRequestResponse } from "@padloc/core/src/api";
-import { Confetti } from "./confetti";
-import { singleton } from "../lib/singleton";
+// import { Confetti } from "./confetti";
+// import { singleton } from "../lib/singleton";
 
 @customElement("pl-login-signup")
 export class LoginOrSignup extends StartForm {
@@ -72,8 +72,8 @@ export class LoginOrSignup extends StartForm {
     @query("#masterPasswordDrawer")
     private _masterPasswordDrawer: Drawer;
 
-    @singleton("pl-confetti")
-    private _confetti: Confetti;
+    // @singleton("pl-confetti")
+    // private _confetti: Confetti;
 
     @dialog("pl-generator-dialog")
     private _generatorDialog: GeneratorDialog;
@@ -128,9 +128,9 @@ export class LoginOrSignup extends StartForm {
             !this._password ? this._generatePassphrase() : this._revealPassphrase();
         }
 
-        if (this._page === "signup" && this._step === "success") {
-            this._confetti.pop();
-        }
+        // if (this._page === "signup" && this._step === "success") {
+        //     this._confetti.pop();
+        // }
 
         if (this._page === "login") {
             this._loginPasswordInput?.focus();
@@ -403,8 +403,8 @@ export class LoginOrSignup extends StartForm {
                 const choice = await choose(
                     $l(
                         "The password you entered is weak which makes it easier for attackers to break " +
-                            "the encryption used to protect your data. Try to use a longer password or include a " +
-                            "variation of uppercase, lowercase and special characters as well as numbers!"
+                            "Try to use a longer password or include " +
+                            "uppercase, lowercase and special characters as well as numbers!"
                     ),
                     [$l("Choose Different Password"), $l("Use Anyway")],
                     {
@@ -797,8 +797,7 @@ export class LoginOrSignup extends StartForm {
                             <div class="hint margined text-centering padded">
                                 ${$l(
                                     "Your master password is the last password you'll ever have to remember! " +
-                                        "Please memorize it and never reveal it to anyone <strong>not even us!</strong> " +
-                                        "We recommend storing it somewhere safe."
+                                        "Please memorize it and never reveal it to anyone not even us!"
                                 )}
                             </div>
 

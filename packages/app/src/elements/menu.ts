@@ -537,20 +537,6 @@ export class Menu extends Routing(StateMixin(LitElement)) {
 
                     <div
                         class="menu-item"
-                        @click=${() => this._goTo("settings")}
-                        aria-selected=${this.selected === "settings"}
-                    >
-                        <pl-icon icon="settings"></pl-icon>
-
-                        <div class="stretch">${$l("Settings")}</div>
-
-                        ${app.getAccountProvisioning().status !== ProvisioningStatus.Active
-                            ? html` <pl-icon icon="warning" class="small negative highlighted"></pl-icon> `
-                            : ""}
-                    </div>
-
-                    <div
-                        class="menu-item"
                         @click=${() => this._goTo("generator")}
                         aria-selected=${this.selected === "generator"}
                     >
@@ -569,6 +555,20 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                         <div class="stretch">${$l("Security Audit")}</div>
 
                         ${count.audit ? html` <div class="small negative highlighted">${count.audit}</div> ` : ""}
+                    </div>
+
+                     <div
+                        class="menu-item"
+                        @click=${() => this._goTo("settings")}
+                        aria-selected=${this.selected === "settings"}
+                    >
+                        <pl-icon icon="settings"></pl-icon>
+
+                        <div class="stretch">${$l("Settings")}</div>
+
+                        ${app.getAccountProvisioning().status !== ProvisioningStatus.Active
+                            ? html` <pl-icon icon="warning" class="small negative highlighted"></pl-icon> `
+                            : ""}
                     </div>
 
                     <div

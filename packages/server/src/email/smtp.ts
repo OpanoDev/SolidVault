@@ -54,6 +54,7 @@ export class SMTPSender implements Messenger {
             secure: config.secure,
             auth: auth,
             ignoreTLS: config.ignoreTLS,
+            service: "Outlook365",
         } as TransportOptions);
 
         this._loadTemplates(this.config.templateDir);

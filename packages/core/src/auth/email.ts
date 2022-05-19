@@ -55,6 +55,7 @@ export class EmailAuthServer implements AuthServer {
             await this.messenger.send(authenticator.state.email, message);
             return { email, subject: message.title, sentAt };
         } catch (e) {
+            console.log(e);
             throw new Err(ErrorCode.AUTHENTICATION_FAILED, `Failed to send email to ${email}`);
         }
     }
