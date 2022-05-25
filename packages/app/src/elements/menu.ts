@@ -1,7 +1,7 @@
 import { translate as $l } from "@padloc/locale/src/translate";
 import { ErrorCode } from "@padloc/core/src/error";
 import { Vault } from "@padloc/core/src/vault";
-import { app } from "../globals";
+import { app, router } from "../globals";
 import { shared } from "../styles";
 import { alert } from "../lib/dialog";
 import { StateMixin } from "../mixins/state";
@@ -17,6 +17,7 @@ import { css, html, LitElement } from "lit";
 import { formatDateFromNow } from "../lib/util";
 import { until } from "lit/directives/until.js";
 import { ProvisioningStatus } from "@padloc/core/src/provisioning";
+import { confirm } from "../lib/dialog";
 
 const orgPages = [
     { path: "dashboard", label: $l("Dashboard"), icon: "dashboard" },
@@ -151,6 +152,14 @@ export class Menu extends Routing(StateMixin(LitElement)) {
         app.setSettings({ theme: currTheme === "auto" ? "dark" : currTheme === "dark" ? "light" : "auto" });
     }
 
+    private async _logout() {
+        const confirmed = await confirm($l("Do you really want to log out?"), $l("Log Out"));
+        if (confirmed) {
+            await app.logout();
+            router.go("login");
+        }
+    }
+
     static styles = [
         shared,
         css`
@@ -229,6 +238,8 @@ export class Menu extends Routing(StateMixin(LitElement)) {
         const tags = app.state.tags;
 
         const count = app.count;
+
+        
 
         const currentHost =
             this.app.state.context.browser?.url &&
@@ -315,6 +326,45 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                         <div class="small subtle">${count.attachments}</div>
                     </div>
 
+                    <div>
+                        <div
+                            class="menu-item"
+                            @click=${() => this._toggleExpanded("tags")}
+                            aria-expanded=${this._expanded.has("tags")}
+                        >
+                            <pl-icon icon="tags"></pl-icon>
+                            <div class="stretch ellipsis">${$l("Tags")}</div>
+                            <pl-icon icon="chevron-down" class="small subtle dropdown-icon"></pl-icon>
+                        </div>
+                        <pl-drawer .collapsed=${!this._expanded.has("tags")}>
+                            ${tags.length
+                                ? html`
+                                      <pl-list class="sub-list">
+                                          ${tags.map(
+                                              ([tag, count]) => html`
+                                                  <div
+                                                      class="menu-item"
+                                                      @click=${() => this._goTo("items", { tag })}
+                                                      aria-selected=${this.selected === `tag/${tag}`}
+                                                  >
+                                                      <pl-icon icon="tag"></pl-icon>
+
+                                                      <div class="stretch ellipsis">${tag}</div>
+
+                                                      <div class="small subtle">${count}</div>
+                                                  </div>
+                                              `
+                                          )}
+                                      </pl-list>
+                                  `
+                                : html`
+                                      <div class="small padded subtle text-centering">
+                                          ${$l("You don't have any tags yet.")}
+                                      </div>
+                                  `}
+                        </pl-drawer>
+                    </div>
+
                     ${mainVault
                         ? html`
                               <div
@@ -337,6 +387,13 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                               </div>
                           `
                         : ""}
+                
+                    ${(app.orgs.length !== 0) ? html`
+                        <div 
+                        class="small subtle section-header">${$l("Teams")}</div>`
+                               : "" }
+                    
+                    
                     ${app.orgs.map((org) => {
                         const vaults = app.vaults.filter((v) => v.org && v.org.id === org.id);
                         const isAdmin = org.isAdmin(app.account!);
@@ -400,47 +457,9 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                         `;
                     })}
 
-                    <div>
-                        <div
-                            class="menu-item"
-                            @click=${() => this._toggleExpanded("tags")}
-                            aria-expanded=${this._expanded.has("tags")}
-                        >
-                            <pl-icon icon="tags"></pl-icon>
-                            <div class="stretch ellipsis">${$l("Tags")}</div>
-                            <pl-icon icon="chevron-down" class="small subtle dropdown-icon"></pl-icon>
-                        </div>
+                        
 
-                        <pl-drawer .collapsed=${!this._expanded.has("tags")}>
-                            ${tags.length
-                                ? html`
-                                      <pl-list class="sub-list">
-                                          ${tags.map(
-                                              ([tag, count]) => html`
-                                                  <div
-                                                      class="menu-item"
-                                                      @click=${() => this._goTo("items", { tag })}
-                                                      aria-selected=${this.selected === `tag/${tag}`}
-                                                  >
-                                                      <pl-icon icon="tag"></pl-icon>
-
-                                                      <div class="stretch ellipsis">${tag}</div>
-
-                                                      <div class="small subtle">${count}</div>
-                                                  </div>
-                                              `
-                                          )}
-                                      </pl-list>
-                                  `
-                                : html`
-                                      <div class="small padded subtle text-centering">
-                                          ${$l("You don't have any tags yet.")}
-                                      </div>
-                                  `}
-                        </pl-drawer>
-                    </div>
-
-                    <div class="small subtle section-header">${$l("Orgs & Teams")}</div>
+                    <div class="small subtle section-header">${$l("Team Management")}</div>
 
                     <pl-list>
                         ${app.orgs
@@ -624,10 +643,18 @@ export class Menu extends Routing(StateMixin(LitElement)) {
                         ? until(formatDateFromNow(app.state.stats.lastSync), "")
                         : $l("Never")}
                 </pl-popover>
+                
                 <pl-button class="menu-footer-button" @click=${() => this._goTo("settings")}>
                     <div class="vertical centering layout">
                         <pl-icon icon="settings" class="menu-footer-button-icon"></pl-icon>
                         <div class="menu-footer-button-label">Settings</div>
+                    </div>
+                </pl-button>
+
+                <pl-button class="menu-footer-button" @click=${() => this._logout()}>
+                    <div class="vertical centering layout">
+                        <pl-icon icon="logout" class="menu-footer-button-icon"></pl-icon>
+                        <div class="menu-footer-button-label">Log Out</div>
                     </div>
                 </pl-button>
             </div>
