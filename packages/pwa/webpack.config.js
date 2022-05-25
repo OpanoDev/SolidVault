@@ -8,7 +8,8 @@ const { version } = require("../../package.json");
 const sharp = require("sharp");
 
 const out = process.env.PL_PWA_DIR || resolve(__dirname, "dist");
-const serverUrl = "http://localhost:3000";
+// const serverUrl = "http://localhost:3000";
+const serverUrl = process.env.PL_SERVER_URL || "http://localhost:3000";
 const rootDir = resolve(__dirname, "../..");
 const assetsDir = resolve(rootDir, process.env.PL_ASSETS_DIR || "assets");
 
