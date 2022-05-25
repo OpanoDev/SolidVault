@@ -1,7 +1,7 @@
 import { MongoClient, Db, Collection, CreateCollectionOptions, ObjectId } from "mongodb";
 import { Storage, Storable, StorableConstructor, StorageListOptions } from "@padloc/core/src/storage";
 import { Err, ErrorCode } from "@padloc/core/src/error";
-import path from "path";
+// import path from "path";
 import { Config, ConfigParam } from "@padloc/core/src/config";
 
 export class MongoDBStorageConfig extends Config {
@@ -40,19 +40,9 @@ export class MongoDBStorage implements Storage {
 
     constructor(config: MongoDBStorageConfig) {
         this.config = config;
-        let { username, password, host, port, protocol = "mongodb", authDatabase, tls, tlsCAFile } = config;
-        tlsCAFile = tlsCAFile && path.resolve(process.cwd(), tlsCAFile);
-        this._client = new MongoClient(
-            `${protocol}://${host}${authDatabase ? `/${authDatabase}` : ""}${port ? `:${port}` : ""}`,
-            {
-                auth: {
-                    username,
-                    password,
-                },
-                tls,
-                tlsCAFile,
-            }
-        );
+        let { username, password, host, protocol } = config;
+        const url = `${protocol}://${username}:${password}@${host}/?retryWrites=true&w=majority`;
+        this._client = new MongoClient(url)
     }
 
     private async _getCollection(kind: string) {
