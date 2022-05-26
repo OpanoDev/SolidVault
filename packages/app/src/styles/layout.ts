@@ -295,7 +295,7 @@ export const layout = css`
 
     .layout.pane > :first-child {
         width: 100%;
-        max-width: var(--pane-left-width, 25em);
+        max-width: var(--pane-left-width, 35em);
         border-right: solid 1px var(--border-color);
         flex: 1;
     }
