@@ -51,7 +51,7 @@ module.exports = {
         new EnvironmentPlugin({
             PL_APP_NAME: name,
             PL_SERVER_URL: serverUrl,
-            PL_SUPPORT_EMAIL: "support@padloc.app",
+            PL_SUPPORT_EMAIL: "support@solidqore.com",
             PL_VERSION: version,
             PL_VENDOR_VERSION: version,
             PL_DISABLE_SW: true,

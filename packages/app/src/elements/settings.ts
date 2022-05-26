@@ -202,12 +202,12 @@ export class Settings extends StateMixin(Routing(View)) {
     }
 
     private _openWebsite() {
-        window.open("https://padloc.app", "_system");
+        window.open("https://app.solidqore.com", "_system");
     }
 
     private _sendMail() {
         const email = process.env.PL_SUPPORT_EMAIL || "";
-        const subject = "Padloc Support Request";
+        const subject = "Solidvault Support Request";
         const message = `
 
 ----- enter your message above -----
