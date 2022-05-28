@@ -56,9 +56,9 @@ module.exports = {
         new EnvironmentPlugin({
             PL_APP_NAME: name,
             PL_SERVER_URL: serverUrl,
-            PL_BILLING_ENABLED: true,
-            PL_BILLING_DISABLE_PAYMENT: false,
-            PL_BILLING_STRIPE_PUBLIC_KEY: process.env.PL_PROVISIONING_STRIPE_PUBLIC_KEY,
+            PL_BILLING_ENABLED: null,
+            PL_BILLING_DISABLE_PAYMENT: null,
+            PL_BILLING_STRIPE_PUBLIC_KEY: null,
             PL_SUPPORT_EMAIL: "support@solidqore.com",
             PL_VERSION: version,
             PL_VENDOR_VERSION: version,
