@@ -19,10 +19,10 @@ export class OrgQuota extends Serializable {
         Object.assign(this, vals);
     }
 
-    members = 50;
-    groups = 10;
-    vaults = 10;
-    storage = 1000;
+    members = -1;
+    groups = -1;
+    vaults = -1;
+    storage = -1;
 }
 
 export class AccountQuota extends Serializable {
@@ -31,8 +31,8 @@ export class AccountQuota extends Serializable {
         Object.assign(this, vals);
     }
 
-    vaults = 1;
-    storage = 0;
+    vaults = -1;
+    storage = -1;
 }
 
 export type RichContent = {
