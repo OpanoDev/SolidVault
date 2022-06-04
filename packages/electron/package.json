@@ -1,12 +1,12 @@
 {
     "name": "@padloc/electron",
     "version": "4.0.0",
-    "description": "Electron Wrapper for Padloc app",
+    "description": "Electron Wrapper for SolidVault app",
     "main": "main.js",
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/padloc/padloc.git"
+        "url": ""
     },
     "engines": {
         "node": "16.13.1",
@@ -16,7 +16,7 @@
         "build": "rm -rf app build dist && webpack && node ./prepare-build.js && electron-builder --config build/build.json",
         "start": "webpack && electron app/main.js"
     },
-    "author": "MaKleSoft UG",
+    "author": "Yasin Karaman",
     "license": "GPL-3.0",
     "dependencies": {
         "@padloc/app": "4.0.0",

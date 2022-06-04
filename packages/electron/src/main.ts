@@ -28,7 +28,7 @@ async function updateReady(updateInfo: UpdateInfo) {
     const { response } = await dialog.showMessageBox(win, {
         message: "Install Update",
         detail:
-            `Padloc version ${updateInfo.version} has been downloaded. The update will be installed ` +
+            `Solidvault version ${updateInfo.version} has been downloaded. The update will be installed ` +
             `the next time the app is launched.`,
         buttons: ["Install Later", "Install And Restart"],
         defaultId: 1,
