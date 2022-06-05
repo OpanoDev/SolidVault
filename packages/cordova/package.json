@@ -1,7 +1,7 @@
 {
     "name": "@padloc/cordova",
-    "version": "4.0.0",
-    "displayName": "Padloc",
+    "version": "1.2.0",
+    "displayName": "SolidVault",
     "private": true,
     "engines": {
         "node": "16.13.1",

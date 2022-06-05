@@ -1,6 +1,6 @@
-# @padloc/cordova
+# SolidVault App repo
 
-This package contains the sources to build the mobile apps for Padloc.
+This package contains the sources to build the mobile apps for SolidVault.
 
 ## Requirements (Android)
 

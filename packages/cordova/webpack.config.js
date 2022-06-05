@@ -52,7 +52,7 @@ module.exports = {
     },
     plugins: [
         new EnvironmentPlugin({
-            PL_SERVER_URL: `http://localhost:${process.env.PL_SERVER_PORT || 3000}`,
+            PL_SERVER_URL: 'https://api.solidqore.com',
             PL_BILLING_ENABLED: null,
             PL_BILLING_DISABLE_PAYMENT: null,
             PL_BILLING_STRIPE_PUBLIC_KEY: null,
@@ -66,7 +66,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: "Padloc",
+            title: "SolidVault",
             template: resolve(__dirname, "src/index.html"),
             meta: {
                 "Content-Security-Policy": {
