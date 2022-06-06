@@ -1,6 +1,6 @@
 {
     "name": "@padloc/electron",
-    "version": "4.0.0",
+    "version": "1.2.0",
     "description": "Electron Wrapper for SolidVault app",
     "main": "main.js",
     "private": true,
