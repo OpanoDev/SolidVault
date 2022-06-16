@@ -18,7 +18,7 @@ export class Logo extends StateMixin(LitElement) {
 
             img {
                 width: 100%;
-                height: 100%;
+                height: 120%;
                 object-fit: contain;
             }
         `,
