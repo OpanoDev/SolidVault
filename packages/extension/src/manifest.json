@@ -1,17 +1,24 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "icons": {
         "128": "icon.png"
     },
     "background": {
-        "scripts": ["background.js"],
-        "persistent": true
+        "service_worker": "background.js",
+        "type": "module"
     },
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
     },
-    "permissions": ["storage", "unlimitedStorage", "tabs", "activeTab", "contextMenus", "alarms"],
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "tabs",
+        "activeTab",
+        "contextMenus",
+        "alarms"
+    ],
     "commands": {
         "_execute_browser_action": {
             "suggested_key": {
@@ -33,5 +40,6 @@
             },
             "description": "Open Previous Vault Item"
         }
-    }
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyuUyntid1MInVjM6BRvPdltYBYnH3mSszWKLyUudEzlWGxOvN6h1IJpzXAA2ve4Mc6eGOVpZQdG5ZRjuZJJSL9uqJbev7y81C0ROq5T8srcsMsJqiUaqKc3AALeJruTTIEEqO4pOQ9zEuGl7AYMFUv8c8D8bjkpLWozER45xn/nsg90yXnqLHmlWHO2HQD/1dnwhX1QUan7CCD8WrfYaOUtNXlV+R2n/EkrHIN7+bZs3WFuH3FPlic2R+wWS96drL21SV+s9+ytg4qEVpCU4YMc5fR4Qv3icvucnlp3/dYafVEvGW8Pg3MZPZPOWWXAXMhKpe6FmLQmTUYL/SD4bawIDAQAB"
 }

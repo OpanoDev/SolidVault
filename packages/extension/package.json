@@ -1,8 +1,8 @@
 {
     "name": "@padloc/extension",
-    "version": "4.0.0",
-    "description": "Padloc Progressive Web App",
-    "author": "Martin Kleinschrodt <martin@maklesoft.com>",
+    "version": "1.2.0",
+    "description": "SolidVault Web App",
+    "author": "Yasin Karaman karaman@opano.de",
     "license": "GPL-3.0",
     "private": true,
     "files": [
@@ -12,7 +12,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/padloc/padloc.git",
+        "url": "",
         "directory": "packages/pwa"
     },
     "engines": {
