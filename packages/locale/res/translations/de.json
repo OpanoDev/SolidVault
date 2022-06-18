@@ -1180,6 +1180,10 @@
         "Willkommen! Bitte gib dein Emailadresse du fortsetzen"
     ],
     [
+        "Welcome back! Please enter your master password to unlock the app.",
+        "Willkommen zurück! Bitte geben Sie Ihr Master Passwort ein um die App zu entsperren"
+    ],
+    [
         "Your email address serves as your username and allows us to get in touch with you. Don't worry, we would never send you any spam!",
         "Deine Emailadresse dient als Benutzername und als Mittel der Kontaktaufnahme. Keine Sorge, wir werden niemals Spam and dich versenden!"
     ],
@@ -1213,7 +1217,7 @@
     ],
     [
         "Please enter the six digit verification code sent to {0}.",
-        "geben Sie bitte den Bestätigungscode ein, den wir an {0} gesendet haben."
+        "geben Sie bitte den Bestätigungscode ein, den wir an  gesendet haben {0}."
     ],
     [
         "Confirmation Code",
