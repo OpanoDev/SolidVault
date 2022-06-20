@@ -5,4 +5,4 @@ Good news! You now have access to the SolidVault organization {{ orgName }}.
 Open SolidVault: {{ openAppUrl }}
 
 Have a great day!
-This email was sent to you by SolidVault. If you have any questions, contact us at support@padloc.app!
+This email was sent to you by SolidVault. If you have any questions, contact us at support@solidqore.com!

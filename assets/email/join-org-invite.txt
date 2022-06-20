@@ -6,4 +6,4 @@ Join {{ orgName }}: {{ acceptInviteUrl }}
 
 Have a great day!
 
-This email was sent to you by SolidVault. If you have any questions, contact us at support@padloc.app!
+This email was sent to you by SolidVault. If you have any questions, contact us at support@solidqore.app!

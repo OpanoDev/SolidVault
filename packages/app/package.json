@@ -1,7 +1,7 @@
 {
     "name": "@padloc/app",
     "version": "4.0.0",
-    "author": "Martin Kleinschrodt <martin@maklesoft.com>",
+    "author": "Yasin Karaman <karaman@opano.de>",
     "license": "GPL-3.0",
     "private": true,
     "files": [
@@ -12,7 +12,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/padloc/padloc.git",
+        "url": "",
         "directory": "packages/app"
     },
     "engines": {
@@ -60,5 +60,5 @@
         "chai": "4.3.4",
         "mocha": "9.2.2"
     },
-    "description": "Padloc Web-Based UI package"
+    "description": "SolidVault Web-Based UI package"
 }

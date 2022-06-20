@@ -1,7 +1,7 @@
 {
     "name": "@padloc/locale",
     "version": "4.0.0",
-    "description": "Package containing translations and wordlists for Padloc as well as various other localization tools",
+    "description": "Package containing translations and wordlists for SolidVault as well as various other localization tools",
     "main": "src/index.js",
     "files": [
         "src",
@@ -10,7 +10,7 @@
     "scripts": {
         "extract": "ts-node src/extract.ts ../*/src/{**,.}/*.ts"
     },
-    "author": "Martin Kleinschrodt <martin@maklesoft.com>",
+    "author": "Yasin Karaman <karaman@opano.de",
     "license": "GPLv3",
     "devDependencies": {
         "ts-node": "10.0.0",
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/padloc/padloc.git",
+        "url": "",
         "directory": "packages/locale"
     },
     "engines": {
