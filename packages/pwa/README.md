@@ -1,16 +1,13 @@
-# @padloc/pwa
+# PWA
 
-The Padloc Web Client, a
+The Web Client, a
 [Progressive Web App](https://developers.google.com/web/progressive-web-apps).
 
 ## Setup
 
-Currently the `@padloc/pwa` package is meant to be used from within the
-[Padloc monorepo](../../README.md). A standalone npm package is coming soon!
-
 ```sh
-git clone git@github.com:padloc/padloc.git
-cd padloc
+git clone git@github.com:OpanoDev/SolidVault.git
+cd solidvault
 npm ci
 cd packages/pwa
 ```
@@ -42,7 +39,7 @@ app:
 npm run start
 ```
 
-By default the app ist hosted on port `3000`. To change the port, you can use
+By default the app is hosted on port `3000`. To change the port, you can use
 the `PL_PWA_PORT` environment variable:
 
 ```sh
@@ -55,13 +52,3 @@ serve the app in one step, run:
 ```sh
 npm run build_and_start
 ```
-
-## Development
-
-For development instructions, please refer to the
-[monorepo readme](../../README.md#development).
-
-## Contributing
-
-For info on how to contribute to Padloc, please refer to the
-[monorepo readme](../../README.md#contributing).

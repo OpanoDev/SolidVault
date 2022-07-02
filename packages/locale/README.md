@@ -1,7 +1,7 @@
-# Padloc Localization Package
+# Localization Package
 
 This package contains translations, word lists and various localization tools
-for the Padloc app.
+for the app.
 
 ## How To Contribute
 

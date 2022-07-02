@@ -1,16 +1,13 @@
-# @padloc/tauri
+# Tauri
 
 Native cross-platform app, powered by
 [Tauri](https://github.com/tauri-apps/tauri).
 
 ## Setup
 
-The `@padloc/tauri` package is meant to be used from within the
-[Padloc monorepo](../../README.md).
-
 ```sh
-git clone git@github.com:padloc/padloc.git
-cd padloc
+git clone git@github.com:OpanoDev/SolidVault.git
+cd solidvault
 npm ci
 cd packages/tauri
 ```
@@ -49,8 +46,3 @@ For rapid development, there is also dev mode:
 ```sh
 npm run dev
 ```
-
-## Contributing
-
-For info on how to contribute to Padloc, please refer to the
-[monorepo readme](../../README.md#contributing).
